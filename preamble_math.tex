@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Derivatives
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%differential symbol
+\newcommand\dif{\mathrm{d}} 
+% Partial derivative
+\newcommand\pp[2]{\frac{\partial #1}{\partial #2}} 
+% Partial derivative in text
+\newcommand\pptext[2]{\partial #1 / \partial #2} 
+% Derivative
+\newcommand\dd[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+% Derivative in text
+\newcommand\ddtext[2]{\mathrm{d} #1/\mathrm{d} #2} 
+% Second derivative
+\newcommand\ddt[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} {#2}^2}} 
+% Third derivative
+\newcommand\ddthr[2]{\frac{\mathrm{d}^3 #1}{\mathrm{d} {#2}^3}} 
+% nth derivative
+\newcommand\ddn[3]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}} 
+
+% partial differential operator
+\newcommand\pps[1]{\partial_{#1}} 
+% Second partial derivative
+\newcommand\ppt[2]{\frac{\partial^2 #1}{\partial {#2}^2}} 
+% Second partial derivative in text
+\newcommand\ppttext[2]{\partial^2 #1 / \partial {#2}^2}
+% Second mixed partial derivative
+\newcommand\pptm[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}} 
+
+% Third derivative
+\newcommand\ppth[2]{\frac{\partial^3 #1}{\partial {#2}^3}} 
+% Third mixed derivative 1-2
+\newcommand\ppthot[3]{\frac{\partial^3 #1}{\partial {#2} \partial {#3}^2}} 
+% Third mixed derivative 2-1
+\newcommand\ppthto[3]{\frac{\partial^3 #1}{\partial {#2}^2 \partial {#3}}} 
+
+
+
+% Fourth partial derivative
+\newcommand\ppf[2]{\frac{\partial^4 #1}{\partial {#2}^4}} 
+% Mixed fourth derivative 2-2
+\newcommand\ppftt[3]{\frac{\partial^4 #1}{\partial {#2}^2 \partial {#3}^2}} 
+% Mixed fourth derivative 1-3
+\newcommand\ppfoth[3]{\frac{\partial^4 #1}{\partial {#2} \partial {#3}^3}} 
+% Fourth order mixed derivative 3-1
+\newcommand\ppftho[3]{\frac{\partial^4 #1}{\partial {#2}^3 \partial {#3}}} 
+
+
+% Material derivative
+\newcommand\DD[2]{\frac{\mathrm{D} #1}{\mathrm{D} #2}}
+% Material derivative in text
+\newcommand\DDtext[2]{\mathrm{D} #1/\mathrm{D} #2} 
+% Second material derivative
+\newcommand\DDt[2]{\frac{\mathrm{D}^2 #1}{\mathrm{D} {#2}^2}}
+% Material derivative denoted by a dot
+\newcommand\DDdot[1]{\dot{#1}}
+
+
+% Inexact differential
+\def\dbar{{\mathchar'26\mkern-12mu \mathrm{d}}}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Absolute value
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} 
+% norm
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert} 
+% det
+\DeclarePairedDelimiter{\mydet}{\lvert}{\rvert} 
+% inner product 1
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle} 
+% inner product 2
+\newcommand\innerp[2]{\langle #1,#2\rangle} 
+% Trace
+\DeclareMathOperator{\tr}{tr} 
+% Rank
+\newcommand\rank{\mathrm{rank}} 
+% Span
+\newcommand\myspan{\mathrm{span}} 
+% Diameter
+\newcommand\diam{\mathrm{diam}} 
+% Complex conjugate
+\newcommand\conj[1]{\overline{#1}} 
+% ???
+%\newcommand\bc[1]{\overline{#1}} 
+% Sign
+\newcommand\sign{\mathrm{sign}} 
+% Vector
+\newcommand\vect[1]{\underline{#1}}
+% Bold font vector
+\newcommand\vb[1]{\bm{#1}} 
+% Tensor
+\newcommand\mytensor[1]{\tilde{#1}}
+% Mean
+\newcommand\mean[1]{\langle #1\rangle}
+% Infinity mean
+\newcommand\meaninf[1]{{\langle #1\rangle}_{\infty}}
+
+%\newcommand\matr[1]{\uwave{#1}} %matrix
+
+% Probability
+\newcommand\mypr[1]{\Pr\{ #1 \}}
+% Probability
+\newcommand\Prob[1]{\text{Pr}\{ #1 \}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Roman numbers 
+\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}} 
+% Set braces
+\newcommand\myset[1]{\{ #1 \}}
+% Set symbols
+\newcommand\Cset{\mathbb{C}}
+\newcommand\Rset{\mathbb{R}}
+\newcommand\Nset{\mathbb{N}}
+\newcommand\Kset{\mathbb{K}}
+\newcommand\Qset{\mathbb{Q}}
+\newcommand\Fset{\mathbb{F}}
+\newcommand\Eset{\mathbb{E}}
+\newcommand\Zset{\mathbb{Z}}
+%\newcommand\set[1]{\mathbb{#1}}
+
+% Space symbol (such as Hilbert, Banach...)
+\newcommand\mathspace[1]{\mathcal{#1}} % Math space
+
+
+% Operator symbol, mostly used in Qiu's linear algebra course
+\newcommand\oper[1]{\underline{#1}}
+% Image
+\newcommand\image{\mathrm{Im}}
+% Null space
+\newcommand\nullspace{\mathrm{Null}}
+% Range
+\newcommand\range{\mathrm{Range}}
+% Convex hull
+\newcommand\conv[1]{\mathrm{Conv}(#1)} 
+% Interior of a set
+\newcommand\Int[1]{\mathrm{Int}(#1)} 
+% Closure of a set
+\newcommand\Cl[2][]{\mathrm{Cl}_{#1}(#2)} 
+% Boundary of a set
+\newcommand\Bd[1]{\mathrm{Bd}(#1)} 
+% Affine hull
+\newcommand\Aff[1]{\mathrm{Aff}(#1)} 
+% Kernel
+\newcommand\Ker[1]{\mathrm{Ker}(#1)} 
+% Topology
+\newcommand\topo[1]{\mathcal{#1}} 
+% Relative interior
+\newcommand\Ri[1]{\mathrm{Ri}(#1)} 
+% The graph of a function
+\newcommand\Gf[1]{\mathrm{G}(#1)} 
+% The epigraph of a function
+\newcommand\Epi[1]{\mathrm{Epi}(#1)} 
+% The hypograph of a function
+\newcommand\Hyp[1]{\mathrm{Hyp}(#1)} 
+% Real part of a complex number
+\renewcommand\Re[1]{\mathrm{Re}(#1)}
+% Imaginary part of a complex number
+\renewcommand\Im[1]{\mathrm{Im}(#1)}
+% Argmin
+\DeclareMathOperator*{\argmin}{argmin}
+% Argmax
+\DeclareMathOperator*{\argmax}{argmax}
+% Diameter of a set
+\newcommand\diag{\mathrm{diag}}
+
+
+% Operator L
+\newcommand\Lop{\mathcal{L}}
+% Operator N
+\newcommand\Nop{\mathcal{N}}
+
+% Laplace transformed function
+\newcommand\Laplace[1]{\bar{#1}}
+% Fourier transformed function
+\newcommand\Fourier[1]{\tilde{#1}}
+
+
+
+% Inhibitory arrow
+\DeclareFontFamily{U}{FdSymbolC}{}
+\DeclareFontShape{U}{FdSymbolC}{m}{n}{<-> s * FdSymbolC-Book}{}
+\DeclareSymbolFont{fdarrows}{U}{FdSymbolC}{m}{n}
+\DeclareMathSymbol{\leftfootline}{\mathrel}{fdarrows}{"AC}
+\DeclareMathSymbol{\rightfootline}{\mathrel}{fdarrows}{"AD}
+\DeclareMathSymbol{\longleftfootline}{\mathrel}{fdarrows}{"C6}
+\DeclareMathSymbol{\longrightfootline}{\mathrel}{fdarrows}{"C7}
+
+
+% Text: Schwarz-Christoffel 
+\newcommand\schzchris{Schwarz-Christoffel\ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

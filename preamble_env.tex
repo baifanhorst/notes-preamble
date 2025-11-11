@@ -1,0 +1,165 @@
+% Item environment, used for reviewer's comments
+\newenvironment{myitemone}[1]{\par \noindent {\bfseries #1 }\par}{\vspace{2cm}\par}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+
+%\newtheorem{thm}{Theorem}
+%\newtheorem*{remark}{Remark}
+%\newtheorem{mydef}[thm]{Definition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{example}[thm]{Example}
+%\newtheorem{coro}[thm]{Corollary}
+%\newtheorem{alg}[thm]{Algorithm}
+%\newtheorem*{myproof}{Proof}
+%\newtheorem*{summary}{Summary}
+%\newtheorem*{solution}{Solution}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\definecolor{headlinecolor}{RGB}{220,230,241}
+%\definecolor{contentcolor}{RGB}{255,255,224}
+%\definecolor{bordercolor}{RGB}{100,149,237}
+\tcbuselibrary{breakable} % Make a box span multiple pages
+
+% Initialize a new counter for theorem numbering
+\newcounter{thm}
+% Renew \thetheorem to specify how a theorem number will be displayed.
+% The following sets global numbering, irrespective of section number
+% If we want to involve section number, we could use:
+% \renewcommand{\thetheorem}{\thesubsection.\arabic{theorem}}
+% But this is not flexible. For example, if a theorem is in not in a subsection, 
+% the number may not be shown correctly.
+\renewcommand{\thethm}{\arabic{thm}}
+
+
+% Theorem color box
+
+\definecolor{mycolorback}{RGB}{224, 224, 224}       % (255/255, 64/255, 0/255)
+\definecolor{mycolorframe}{RGB}{46, 38, 38} % (255/255, 218/255, 185/255)
+\definecolor{mycolorframeproof}{RGB}{76, 153, 0} 
+
+
+
+
+\newtcolorbox{thmbox}[1][]{
+	breakable, % Allows the box to span multiple pages
+	colback=mycolorback, % background color
+	colframe=mycolorframe, % frame color
+	%colback=black!5!white, % Background color specified in xcolor style, meaning 5% black and 95% white
+	%colframe=black!75!white, % Frame color
+	fonttitle=\bfseries, % title font bold
+	title={Theorem}, % We'll add the number in the environment definition
+	#1 % Command provided by the optional argument, often used to overwrite the settings above, such as using a different color and using a different title
+}
+
+% Theorem environment
+
+\newenvironment{thm}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Theorem \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+
+
+
+
+% Definition environment
+\newenvironment{mydef}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Definition \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Lemma environment
+\newenvironment{lemma}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Lemma \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Corollary environment
+\newenvironment{coro}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Corollary \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Algorithm environment
+\newenvironment{alg}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Algorithm \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Example environment
+\newenvironment{example}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Example \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Remark environment
+\newenvironment{remark}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Remark \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+\newenvironment{myproof}[1][]{%
+	\begin{thmbox}[title={Proof {#1}},%
+		colframe=mycolorframeproof%
+		] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+%\newtcolorbox{myproof}
+%{breakable, % Make the box span multiple pages
+	% colback=black!5!white,
+	% colframe=black!75!white,
+	% fonttitle=\bfseries,
+	% title=Proof}
+
+\newtcolorbox{summary}
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=Summary}
+
+\newtcolorbox{solution}
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=Solution}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+% Only box, without title, used to highlight equations
+\newtcolorbox{mytcb}{
+	breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,}
+% With title bar only
+\newtcolorbox{mytcbt}[1][]
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=\protecting{#1}}
+% In the title definition, \protecting is needed to ensure that 
+% math formulas can be used in the title.
+
+% Make item labels (1), (2),... in enumerate environment
+\newcommand\enumlabel{(\arabic*)} 
+% Item labels for enumerate enviroment in a proof.
+\newcommand\enumlabelproof{[[\arabic*]]} 
+

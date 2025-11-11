@@ -1,0 +1,490 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{graphicx}
+
+\usepackage{geometry} %page margins
+	\geometry{a4paper,left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm}
+	
+	
+%\usepackage{setspace} %double space
+%\doublespacing
+
+
+
+%使用插图标题
+\usepackage{caption,subcaption} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents, List of Figures and Tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft}
+\renewcommand{\cftfigpresnum}{Figure\space} % <-- Add prefix "Figure "
+\setlength{\cftfigindent}{0pt} % <-- Remove indentation
+\setlength{\cftfignumwidth}{60pt} % <-- Set width for the number column
+
+\renewcommand{\cfttabpresnum}{Table\space} % <-- Add prefix "Table "
+\setlength{\cfttabindent}{0pt}            % <-- Remove indentation
+\setlength{\cfttabnumwidth}{60pt} % <-- Set width for the number column
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General Math Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm} %bold font for letters in equations
+\usepackage{amsfonts} %sets of real numbers, integers...
+\usepackage{mathtools} %To use definition symbol \coloneqq and \eqqcolon
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Derivatives
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\dif{\mathrm{d}} %differential symbol
+\newcommand\pp[2]{\frac{\partial #1}{\partial #2}} %Partial derivatives
+\newcommand\pptext[2]{\partial #1 / \partial #2} %Partial derivatives in text
+\newcommand\dd[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand\ddtext[2]{\mathrm{d} #1/\mathrm{d} #2} %行文中的导数
+\newcommand\ddt[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} {#2}^2}} %二次导数
+\newcommand\ddthr[2]{\frac{\mathrm{d}^3 #1}{\mathrm{d} {#2}^3}} %三次导数
+\newcommand\ddn[3]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}} % nth derivative
+\newcommand\pps[1]{\partial_{#1}} % partial differential operator
+\newcommand\ppt[2]{\frac{\partial^2 #1}{\partial {#2}^2}} %二次偏导数
+\newcommand\pptm[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}} %二次混合偏导数
+\newcommand\ppf[2]{\frac{\partial^4 #1}{\partial {#2}^4}} % fourth order derivative
+\newcommand\ppftt[3]{\frac{\partial^4 #1}{\partial {#2}^2 \partial {#3}^2}} % Fourth order mixed derivative pf_pxx_pyy
+\newcommand\ppfoth[3]{\frac{\partial^4 #1}{\partial {#2} \partial {#3}^3}} % Fourth order mixed derivative pf_px_pyyy
+\newcommand\ppftho[3]{\frac{\partial^4 #1}{\partial {#2} \partial {#3}^3}} % Fourth order mixed derivative pf_pxxx_py
+
+\newcommand\ppth[2]{\frac{\partial^3 #1}{\partial {#2}^3}} % 3rd order derivative
+\newcommand\ppthot[3]{\frac{\partial^3 #1}{\partial {#2} \partial {#3}^2}} % Fourth order mixed derivative pf_px_pyyy
+\newcommand\ppthto[3]{\frac{\partial^3 #1}{\partial {#2}^2 \partial {#3}}} % Fourth order mixed derivative pf_px_pyyy
+
+
+
+\newcommand\DD[2]{\frac{\mathrm{D} #1}{\mathrm{D} #2}}
+\newcommand\DDt[2]{\frac{\mathrm{D}^2 #1}{\mathrm{D} {#2}^2}} %二次导数
+\newcommand\DDtext[2]{\mathrm{D} #1/\mathrm{D} #2} %行文中的导数
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % Absolute value
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert} % norm
+\DeclarePairedDelimiter{\mydet}{\lvert}{\rvert} % det
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle} % inner product
+\newcommand\innerp[2]{\langle #1,#2\rangle} % inner product
+\DeclareMathOperator{\tr}{tr} % Trace
+\newcommand\rank{\mathrm{rank}} % Rank
+\newcommand\myspan{\mathrm{span}} % Span
+\newcommand\diam{\mathrm{diam}} % Diameter
+\newcommand\conj[1]{\overline{#1}} % Complex conjugate}
+\newcommand\bc[1]{\overline{#1}} 
+\newcommand\sign{\mathrm{sign}} 
+
+\newcommand\vect[1]{\underline{#1}} %vector
+\newcommand\vb[1]{\bm{#1}} % Bold font vector
+\usepackage{esvect} % Vector arrow \vv
+\newcommand\mytensor[1]{\tilde{#1}} % Tensor notation
+
+
+\usepackage{ulem} %为了加入下波浪线
+\newcommand\matr[1]{\uwave{#1}} %matrix
+\newcommand\mean[1]{\langle #1\rangle}
+\newcommand\meaninf[1]{{\langle #1\rangle}_{\infty}}
+
+
+
+\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}} %Roman numbers 
+
+\newcommand\myset[1]{\{ #1 \}}
+\newcommand\mypr[1]{\Pr\{ #1 \}}
+\newcommand\Cset{\mathbb{C}}
+\newcommand\Rset{\mathbb{R}}
+\newcommand\Nset{\mathbb{N}}
+\newcommand\Kset{\mathbb{K}}
+\newcommand\Qset{\mathbb{Q}}
+\newcommand\Fset{\mathbb{F}}
+\newcommand\Eset{\mathbb{E}}
+\newcommand\Zset{\mathbb{Z}}
+\newcommand\set[1]{\mathbb{#1}}
+
+\newcommand\mathspace[1]{\mathcal{#1}} % Math space
+
+
+
+\newcommand\oper[1]{\underline{#1}}
+\newcommand\image{\mathrm{Im}}
+\newcommand\nullspace{\mathrm{Null}}
+\newcommand\range{\mathrm{Range}}
+\newcommand\conv[1]{\mathrm{Conv}(#1)} % Convex hull of a set
+\newcommand\Int[1]{\mathrm{Int}(#1)} % Interior of a set
+\newcommand\Cl[2][]{\mathrm{Cl}_{#1}(#2)} % Closure of a set
+\newcommand\Bd[1]{\mathrm{Bd}(#1)} % Boundary of a set
+\newcommand\Aff[1]{\mathrm{Aff}(#1)} % Affine hull
+\newcommand\Ker[1]{\mathrm{Ker}(#1)} % Kernel
+\newcommand\topo[1]{\mathcal{#1}} % Topology
+\newcommand\Ri[1]{\mathrm{Ri}(#1)} % Relative interior
+\newcommand\Gf[1]{\mathrm{G}(#1)} % The graph of a function
+\newcommand\Epi[1]{\mathrm{Epi}(#1)} % The epigraph of a function
+\newcommand\Hyp[1]{\mathrm{Hyp}(#1)} % The hypograph of a function
+
+\renewcommand\Re[1]{\mathrm{Re}(#1)}
+\renewcommand\Im[1]{\mathrm{Im}(#1)}
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\newcommand\diag{\mathrm{diag}}
+
+\newcommand\Prob[1]{\text{Pr}\{ #1 \}}
+
+
+\newcommand\Lop{\mathcal{L}}
+\newcommand\Nop{\mathcal{N}}
+
+
+\usepackage{braket} % Dirac's notation
+
+\newcommand\Laplace[1]{\bar{#1}}
+\newcommand\Fourier[1]{\tilde{#1}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference and Citation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+
+
+
+\newcommand\myrefeq[1]{Eq.\,(\ref{#1})} %Eq. ()
+\newcommand\myrefequation[1]{Equation\,(\ref{#1})} %Equation ()
+\newcommand\myrefeqr[2]{Eqs.\,(\ref{#1})--(\ref{#2})} %Eq. ()
+\newcommand\myrefeqt[2]{Eqs.\,(\ref{#1}) and (\ref{#2})} %Eq. () and ()
+\newcommand\myrefeqth[3]{Eqs.\,(\ref{#1}), (\ref{#2}) and (\ref{#3})}
+\newcommand\myrefeqf[4]{Eqs.\,(\ref{#1}), (\ref{#2}),  (\ref{#3}) and (\ref{#4})}
+
+\newcommand\myrefequationth[3]{Equations\,(\ref{#1}), (\ref{#2}) and (\ref{#3})}
+
+
+\newcommand\myreffig[1]{Fig.\,\ref{#1}} %Fig. #
+\newcommand\myreffigure[1]{Figure\,\ref{#1}}
+\newcommand\myreffigt[2]{Fig.\,\ref{#1} and \ref{#2}}
+\newcommand\myreffiguret[2]{Figure\,\ref{#1} and \ref{#2}}
+\newcommand\myreffigureth[3]{Figure\,\ref{#1}, \ref{#2} and \ref{#3}}
+\newcommand\myreffigr[2]{Fig.\,\ref{#1} - \ref{#2}}
+\newcommand\myrefsec[1]{Section\,(\ref{#1})}
+\newcommand\myrefsubsec[1]{Subsection\,(\ref{#1})}
+\newcommand\myrefappendix[1]{Appendix\,(\ref{#1})}
+
+\newcommand\myrefchp[1]{Ch.\,\ref{#1}}
+\newcommand\myrefchapter[1]{Chapter\,\ref{#1}}
+
+\newcommand\mycite[1]{Ref.\,\cite{#1}}
+\newcommand\mycitet[2]{Refs.\,\cite{#1} and \cite{#2}}
+
+\newcommand\myreftb[1]{Table \ref{#1}}
+
+\newcommand\myrefthm[1]{Thm.\,\ref{#1}} %Thm. #
+\newcommand\myreflemma[1]{Lemma.\,\ref{#1}} %Lemma. #
+\newcommand\myrefdef[1]{Def.\,\ref{#1}} %Def. #
+\newcommand\myrefcoro[1]{Coro.\,\ref{#1}} %Coro. #
+
+\newcommand\myrefitem[1]{item \ref{#1}}
+\newcommand\myrefItem[1]{Item \ref{#1}}
+\newcommand\myrefitemp[1]{(\ref{#1})}
+
+
+
+\usepackage[numbers, sort&compress]{natbib}
+
+
+
+
+\usepackage{float} %固定图片位置
+
+
+
+
+
+\usepackage{longtable} %For a list of symbols
+
+
+
+
+
+% Inhibitory arrow
+\DeclareFontFamily{U}{FdSymbolC}{}
+\DeclareFontShape{U}{FdSymbolC}{m}{n}{<-> s * FdSymbolC-Book}{}
+\DeclareSymbolFont{fdarrows}{U}{FdSymbolC}{m}{n}
+\DeclareMathSymbol{\leftfootline}{\mathrel}{fdarrows}{"AC}
+\DeclareMathSymbol{\rightfootline}{\mathrel}{fdarrows}{"AD}
+\DeclareMathSymbol{\longleftfootline}{\mathrel}{fdarrows}{"C6}
+\DeclareMathSymbol{\longrightfootline}{\mathrel}{fdarrows}{"C7}
+
+
+
+\usepackage{extarrows} %Used for an equal sign with text above it.
+
+\usepackage{booktabs} %For three-line tables
+
+% Enhanced formatting for author and affiliation blocks
+\usepackage{authblk}
+
+
+\usepackage{gensymb} %For the symbol of celcius degree \degree
+
+\usepackage{listings} % For adding codes
+
+
+
+%\usepackage{chemarrow} %使用双向箭头
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumitem} %制定列表可选参数
+
+%自定义环境
+\newenvironment{myitemone}[1]{\par \noindent {\bfseries #1 }\par}{\vspace{2cm}\par}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% Theorem-like environments
+\usepackage{amsthm} % \newtheorem* requires this package
+
+%\newtheorem{thm}{Theorem}
+%\newtheorem*{remark}{Remark}
+%\newtheorem{mydef}[thm]{Definition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{example}[thm]{Example}
+%\newtheorem{coro}[thm]{Corollary}
+%\newtheorem{alg}[thm]{Algorithm}
+%\newtheorem*{myproof}{Proof}
+%\newtheorem*{summary}{Summary}
+%\newtheorem*{solution}{Solution}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color-boxed theorem environment
+\usepackage[most]{tcolorbox} % Color boxes for theorem-like environments
+%\definecolor{headlinecolor}{RGB}{220,230,241}
+%\definecolor{contentcolor}{RGB}{255,255,224}
+%\definecolor{bordercolor}{RGB}{100,149,237}
+\tcbuselibrary{breakable} % Make a box span multiple pages
+
+% Initialize a new counter for theorem numbering
+\newcounter{thm}
+% Renew \thetheorem to specify how a theorem number will be displayed.
+% The following sets global numbering, irrespective of section number
+% If we want to involve section number, we could use:
+% \renewcommand{\thetheorem}{\thesubsection.\arabic{theorem}}
+% But this is not flexible. For example, if a theorem is in not in a subsection, 
+% the number may not be shown correctly.
+\renewcommand{\thethm}{\arabic{thm}}
+
+
+% Theorem color box
+
+\definecolor{mycolorback}{RGB}{224, 224, 224}       % (255/255, 64/255, 0/255)
+\definecolor{mycolorframe}{RGB}{46, 38, 38} % (255/255, 218/255, 185/255)
+
+
+
+
+\newtcolorbox{thmbox}[1][]{
+	breakable, % Allows the box to span multiple pages
+	colback=mycolorback,
+	colframe=mycolorframe,
+	%colback=black!5!white, % Background color specified in xcolor style, meaning 5% black and 95% white
+	%colframe=black!75!white, % Frame color
+	fonttitle=\bfseries,
+	title={Theorem}, % We'll add the number in the environment definition
+	#1 % Command provided by the optional argument
+}
+
+% Theorem environment
+
+\newenvironment{thm}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Theorem \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+
+
+
+
+% Definition environment
+\newenvironment{mydef}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Definition \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Lemma environment
+\newenvironment{lemma}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Lemma \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Corollary environment
+\newenvironment{coro}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Corollary \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Algorithm environment
+\newenvironment{alg}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Algorithm \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Example environment
+\newenvironment{example}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Example \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+% Remark environment
+\newenvironment{remark}[1][]{
+	\refstepcounter{thm} % Increment and make the counter referencable
+	\begin{thmbox}[title={Remark \thethm\IfNoValueF{#1}{ #1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+\newenvironment{myproof}[1][]{
+	\begin{thmbox}[title={Proof {#1}}] % Display the theorem number and optional title
+	}{\end{thmbox}}
+
+
+%\newtcolorbox{myproof}
+%{breakable, % Make the box span multiple pages
+	% colback=black!5!white,
+	% colframe=black!75!white,
+	% fonttitle=\bfseries,
+	% title=Proof}
+
+\newtcolorbox{summary}
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=Summary}
+
+\newtcolorbox{solution}
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=Solution}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+% Only box, without title, used to highlight equations
+\newtcolorbox{mytcb}{
+	breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,}
+% With title bar only
+\newtcolorbox{mytcbt}[1][]
+{breakable, 
+	colback=mycolorback,
+	colframe=mycolorframe,
+	fonttitle=\bfseries,
+	title=\protecting{#1}}
+% In the title definition, \protecting is needed to ensure that 
+% math formulas can be used in the title.
+
+
+
+
+\newcommand\enumlabel{(\arabic*)} % Make item labels (1), (2),... in enumerate environment
+\newcommand\enumlabelproof{[[\arabic*]]} % Item labels for enumerate enviroment in a proof.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+
+% For color \color{red}
+% [table] enables coloring of tables
+\usepackage[table]{xcolor} 
+\definecolor{protecteyes}{rgb}{0.9, 0.99, 0.9}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Drawing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}  
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Check mark and cross mark 
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+
+\usepackage{empheq}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode} % For writing codes
+
+
+\newcommand\newpara{\vspace{1cm}\noindent} % Begin a new paragraph
+\newcommand\wrt{with respect to\ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

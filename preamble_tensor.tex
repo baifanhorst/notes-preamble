@@ -1,0 +1,63 @@
+\usepackage{tensor} % For tensor indices
+
+\newcommand\gco[1]{\bm{g_{#1}}} % Covariant basis
+\newcommand\gct[1]{\bm{g^{#1}}} % Contravariant basis
+\newcommand\gcoL[1]{ \bm{\hat{g}_{#1}} } % Covariant basis wrt Lagrange coordinates at t
+\newcommand\gctL[1]{ \bm{\hat{g}^{#1}} } % Contravariant basis wrt Lagrange coordinates at t
+\newcommand\gcoLi[1]{ \bm{\mathring{g}_{#1}} } % Covariant basis wrt Lagrange coordinates at t=0
+\newcommand\gctLi[1]{ \bm{\mathring{g}^{#1}} } % Contravariant basis wrt Lagrange coordinates at t=0
+
+\newcommand\gradL{ \hat{\nabla} } % Gradient wrt Lagrange coordinates
+\newcommand\gmetL[2]{\hat{g}_{#1 #2}} % metric wrt Lagrange coordinates
+
+\newcommand\invar[2]{\mathcal{#1}_{#2}} %Invariant of a 2nd order tensor
+
+\newcommand\twovstars{\tensor*{}{*^{*}_{*}}} %Vertical double stars
+
+\newcommand\dcov[2]{{#1}_{;#2}} % Covariant derivative
+
+
+\newcommand\depszero{  
+	\frac{\mathrm{d}}{\mathrm{d} \epsilon}\Big|_{\epsilon=0} }
+
+\newcommand\Vinit{\mathring{V}} % volumn in the initial config
+\newcommand\ainit{\mathring{a}} % area in the initial config
+\newcommand\Ainit{\mathring{A}} % area in the initial config
+\newcommand\rhoinit{\mathring{\rho}}
+\newcommand\uinit{\mathring{u}}
+\newcommand\vinit{\mathring{u}}
+\newcommand\GAinit{\mathring{\Gamma}} % boundary in the initial config, can be used for both 2D and 3D cases.
+\newcommand\IC[1]{\mathring{#1}} % A quantity in the initial config
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notation used in the weak form
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\dm{\Omega} % Current domain
+\newcommand\dminit{\mathring{\Omega}} % Initial domain
+\newcommand\bdry{\Gamma} % Current boundary
+\newcommand\bdryinit{\mathring{\Gamma}} % Initial boundary
+\newcommand\bdryu{\Gamma_u} % Current displacement boundary
+\newcommand\bdryt{\Gamma_t} % Current traction boundary
+\newcommand\bdrytinit{\mathring{\Gamma}_t} % Initial traction boundary
+\newcommand\bdrycinit{\mathring{\Gamma}_c} % Initial contact boundary
+\newcommand\bdrycsinit{\mathring{\Gamma}_c^{(s)}}
+\newcommand\bdrycminit{\mathring{\Gamma}_c^{(m)}}
+
+\newcommand\deps{\frac{\mathrm{d}}{\mathrm{d} \epsilon} \Bigg|_{\epsilon=0} } % Used in the definition of directional derivative.
+
+
+
+\newcommand\dSdE{\vb{C^4}}% The derivative of S wrt E. In bonet's book this is denoted by C
+\newcommand\dSdEcomp{(C^4)} % Used for the component of \dSdE
+
+\newcommand\cfour{\vb{c^4}}% the 4th tensor related to dSdE
+\newcommand\cfourcomp{(c^4)} % component of it
+
+
+\newcommand\Wint{W_{\text{int}}}
+\newcommand\Wext{W_{\text{ext}}}
+\newcommand\Wb{W_b}
+\newcommand\Wt{W_t}
+\newcommand\Wc{W_c}
+\newcommand\Fint{F^{\text{int}}}
